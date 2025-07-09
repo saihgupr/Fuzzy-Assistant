@@ -1,5 +1,4 @@
-# Fuzzy Assistant
-![Dashboard Preview](https://i.imgur.com/2Sap7Qh.png)
+![Dashboard Preview](https://i.imgur.com/mQ6sywi.png)
 A powerful command-line interface to control your Home Assistant entities using natural language.
 
 ## Description
@@ -10,11 +9,14 @@ This script allows you to quickly control your Home Assistant devices without ne
 
 -   **Natural Language Processing:** Understands commands like "turn on the lights" or "set thermostat to 72".
 -   **Fuzzy Entity Matching:** Finds the correct device even if you don't type the exact name. "ktl" or "trn on ktt", both turn on the kettle.
--   **Alfred Workflow:** A quick access text input using Alfred for Mac OS.
 -   **Wide Device Support:** Controls lights, switches, fans, climate (thermostats), media players, locks, and more.
 -   **Multi-Entity Commands:** Control multiple devices at once, e.g., `python script.py turn on living room light and fan`.
 -   **Entity Cache:** Fetches all your entities and caches them locally for fast performance.
 -   **Debug Mode:** A debug mode for troubleshooting and seeing command details.
+-   **Alfred Workflow:** A quick access text input using Alfred for Mac OS.
+
+## Alfred Workflow
+![Dashboard Preview](https://i.imgur.com/2Sap7Qh.png)
 
 ## Requirements
 
