@@ -14,6 +14,7 @@ This script allows you to quickly control your Home Assistant devices without ne
 -   **Multi-Entity Commands:** Control multiple devices at once, e.g., `python script.py turn on living room light and fan`.
 -   **Entity Cache:** Fetches all your entities and caches them locally for fast performance.
 -   **Debug Mode:** A debug mode for troubleshooting and seeing command details.
+-   **Alred Workflow:** A quick access text input using Alfred for Mac OS.
 
 ## Requirements
 
