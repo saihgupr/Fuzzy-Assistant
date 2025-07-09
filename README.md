@@ -1,4 +1,5 @@
 ![Dashboard Preview](https://i.imgur.com/mQ6sywi.png)
+
 A powerful command-line interface to control your Home Assistant entities using natural language.
 
 ## Description
