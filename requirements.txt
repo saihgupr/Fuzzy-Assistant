@@ -1,4 +1,3 @@
-requests
-PyYAML
-fuzzywuzzy
-python-Levenshtein
+requests==2.32.4
+PyYAML==6.0.2
+thefuzz[speedup]==0.22.1
