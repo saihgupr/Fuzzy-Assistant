@@ -1,6 +1,6 @@
 import requests
 import yaml
-from fuzzywuzzy import fuzz
+from thefuzz import fuzz
 import sys
 import re
 import os
