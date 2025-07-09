@@ -1,0 +1,4 @@
+requests
+PyYAML
+fuzzywuzzy
+python-Levenshtein
