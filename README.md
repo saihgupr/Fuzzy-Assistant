@@ -23,8 +23,7 @@ This script allows you to quickly control your Home Assistant devices without ne
 -   Python 3
 -   `requests`
 -   `PyYAML`
--   `fuzzywuzzy`
--   `python-Levenshtein` (optional, for better performance)
+-   `thefuzz` (with `python-Levenshtein` for speed)
 
 You can install the required libraries using pip:
 ```bash
