@@ -130,15 +130,23 @@ def find_entities(user_input: str) -> list[tuple[float, str]] | None:
     global _ENTITIES_CACHE
     
     try:
-        colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "white"]
-        if user_input.lower() in colors:
-            debug_print(f"Using default color lights")
-            # Assuming DEFAULT_ENTITIES['color_lights'] is a list of entity_ids
-            # We need to return them with a nominal high score if this path is taken.
-            return [(100.0, eid) for eid in DEFAULT_ENTITIES['color_lights']] if DEFAULT_ENTITIES.get('color_lights') else None
-            
         user_input_lower = user_input.lower()
         
+        # Check if the command starts with a default entity key
+        for key in DEFAULT_ENTITIES:
+            if user_input_lower.startswith(key):
+                entity_id = DEFAULT_ENTITIES[key]
+                debug_print(f"Using default entity for '{key}': {entity_id}")
+                if isinstance(entity_id, str):
+                    return [(100.0, entity_id)]
+                elif isinstance(entity_id, list):
+                    return [(100.0, eid) for eid in entity_id]
+
+        colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "white"]
+        if user_input_lower in colors:
+            debug_print(f"Using default color lights")
+            return [(100.0, eid) for eid in DEFAULT_ENTITIES.get('color_lights', [])]
+            
         debug_print(f"Automations will be included in search if names match.")
         
         is_temp_command = bool(re.search(r'(\d+)', user_input_lower) and 
@@ -153,7 +161,7 @@ def find_entities(user_input: str) -> list[tuple[float, str]] | None:
                 _ENTITIES_CACHE = yaml.safe_load(file)
             debug_print(f"Cache load time: {(time.time() - cache_start)*1000:.1f}ms")
         
-        device_names = re.split(r' and |, ', user_input.lower())
+        device_names = re.split(r' and |, ', user_input_lower)
         found_entities_with_scores = []
 
         is_short_ambiguous_input_context = (
